@@ -105,10 +105,11 @@ void ExplodeBomb(BOMBS bomb,TILES map[15][13]){
     bool stopVerticalF = false, stopHorizontalF = false,
     stopVerticalB = false, stopHorizontalB = false;
 
-    int x = 0,y = 0;
+    int x = 1,y = 1;
 
-    while(x++<bomb.radius){
-      if(!stopHorizontalB && !stopHorizontalF){
+    while(x<=bomb.radius){
+      if(!stopHorizontalB || !stopHorizontalF){
+
         if(!stopHorizontalF && (map[bomb.entity.x + x][bomb.entity.y] == BOX
         || map[bomb.entity.x + x][bomb.entity.y] == GRASS))
             map[bomb.entity.x + x][bomb.entity.y] = GRASS;
@@ -116,15 +117,16 @@ void ExplodeBomb(BOMBS bomb,TILES map[15][13]){
           stopHorizontalF = true;
 
         if(!stopHorizontalB && (map[bomb.entity.x - x][bomb.entity.y] == BOX
-        || map[bomb.entity.x - x][bomb.entity.y] == GRASS))
-              map[bomb.entity.x - x][bomb.entity.y] = GRASS;
+        || map[bomb.entity.x - x][bomb.entity.y] == GRASS)){
+              map[bomb.entity.x - x][bomb.entity.y] = GRASS;}
           else
             stopHorizontalB = true;
       }
+      x++;
 
     }
-    while(y++<bomb.radius){
-      if(!stopVerticalB && !stopVerticalF){
+    while(y<=bomb.radius){
+      if(!stopVerticalB || !stopVerticalF){
         if(!stopVerticalF && (map[bomb.entity.x][bomb.entity.y + y] == BOX
         || map[bomb.entity.x][bomb.entity.y + y] == GRASS))
             map[bomb.entity.x][bomb.entity.y + y] = GRASS;
@@ -137,8 +139,10 @@ void ExplodeBomb(BOMBS bomb,TILES map[15][13]){
           else
             stopVerticalB = true;
       }
+      y++;
 
     }
+
 }
 
 void CreateExplosion(BOMBS bomb, EXPLOSION* explosion){
