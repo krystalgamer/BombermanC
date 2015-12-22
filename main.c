@@ -2,6 +2,7 @@
 
 int main(){
 
+  log = fopen("./log.txt", "w");
   al_init();
   al_init_image_addon();
   al_install_keyboard();
@@ -15,19 +16,21 @@ int main(){
 
   eventQueue = al_create_event_queue();
   drawTimer = al_create_timer(1/60.0);
-
   PLAYER player;
   player.entity.x = 1;
   player.entity.y = 1;
-  player.entity.sprite = al_load_bitmap("./player.png");
-  ALLEGRO_BITMAP* bombSprite = al_load_bitmap("./coise.png");
+  player.entity.sprite = al_load_bitmap("./bitmaps/player.png");
+  ALLEGRO_BITMAP* bombSprite = al_load_bitmap("./bitmaps/coise.png");
+  ALLEGRO_BITMAP* expSprite = al_load_bitmap("./bitmaps/exp48.png");
   al_convert_mask_to_alpha(bombSprite, al_get_pixel(bombSprite, 0, 0));
+  al_convert_mask_to_alpha(expSprite, al_get_pixel(expSprite, 0, 0));
   player.maxBombs = MAX_BOMBS;
   al_convert_mask_to_alpha(player.entity.sprite, al_map_rgb(255,0,255));
 
   display = al_create_display(480,416);
-  tileMap = al_load_bitmap("./tiles2.png");
+  tileMap = al_load_bitmap("./bitmaps/tiles2.png");
   srand(time(NULL));
+
   CreateMap(map);
 
   al_register_event_source(eventQueue, al_get_timer_event_source(drawTimer));
@@ -35,7 +38,7 @@ int main(){
   al_start_timer(drawTimer);
   bool redraw = false;
 
-  InitBombs(player.bombs,bombSprite);
+  InitBombs(player.bombs,bombSprite,expSprite);
 
   while(1){
     while(!al_event_queue_is_empty(eventQueue)){
@@ -47,6 +50,7 @@ int main(){
           case ALLEGRO_EVENT_TIMER:
                 redraw = true;
                 UpdateBomb(player.bombs, map);
+                UpdateExplosion(player.bombs);
                 break;
           case ALLEGRO_EVENT_KEY_DOWN:
                 TryToMovePlayer(&(player.entity),event.keyboard.keycode,map,&player);
@@ -59,6 +63,7 @@ int main(){
       redraw = false;
       DrawMap(map,tileMap);
       DrawBomb(player.bombs);
+      DrawExplosion(player.bombs);
       al_draw_scaled_bitmap(player.entity.sprite, 0, 0, 16, 16, player.entity.x*32, player.entity.y*32, 32, 32, 0);
       al_flip_display();
     }

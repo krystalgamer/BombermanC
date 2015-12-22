@@ -43,13 +43,19 @@ void MoveHorizontal(ENTITY* player,bool forward, TILES map[15][13]){
 BOMB PART
 
 */
-void InitBombs(BOMBS bombs[5],ALLEGRO_BITMAP* bombSprite){
+void InitBombs(BOMBS bombs[5],ALLEGRO_BITMAP* bombSprite,ALLEGRO_BITMAP* expSprite){
   int i = 0;
   while(i<5){
-    bombs[i].isLive = false;
+    bombs[i].isLive = bombs[i].explosion.isLive = false;
     bombs[i].maxTime = MAX_TIME;
     bombs[i].currTime = 0;
+    bombs[i].radius = bombs[i].explosion.radius = 2;
     bombs[i].entity.sprite = bombSprite;
+    bombs[i].explosion.currDelay = 5;
+    bombs[i].explosion.frameDelay = 1;
+    bombs[i].explosion.maxFrame = 6;
+    bombs[i].explosion.currFrame = bombs[i].explosion.currDelay = 0;
+    bombs[i].explosion.entity.sprite = expSprite;
     i++;
   }
 }
@@ -87,6 +93,7 @@ void UpdateBomb(BOMBS bombs[5],TILES map[15][13]){
         bombs[i].currTime = 0;
         bombs[i].radius = 2;
         map[bombs[i].entity.x][bombs[i].entity.y] = GRASS;
+        CreateExplosion(bombs[i], &bombs[i].explosion);
         ExplodeBomb(bombs[i],map);
       }
     }
@@ -132,15 +139,41 @@ void ExplodeBomb(BOMBS bomb,TILES map[15][13]){
       }
 
     }
-    /*for(int x = 1;x<=bomb.radius;x++){
-      for(int y = 1;y<=bomb.radius;y++){
-        map[bomb.entity.x][bomb.entity.y + y] = map[bomb.entity.x][bomb.entity.y + y]==BOX?GRASS:map[bomb.entity.x][bomb.entity.y + y];
-        map[bomb.entity.x][bomb.entity.y - y] = map[bomb.entity.x][bomb.entity.y - y]==BOX?GRASS:map[bomb.entity.x][bomb.entity.y - y];
+}
 
+void CreateExplosion(BOMBS bomb, EXPLOSION* explosion){
+    explosion->entity.x = bomb.entity.x;
+    explosion->entity.y = bomb.entity.y;
+    explosion->currFrame = 0;
+    explosion->isLive = true;
+}
+void UpdateExplosion(BOMBS bombs[5]){
+
+  int i = 0;
+    while(i<5){
+      if(bombs[i].explosion.isLive){
+        if((bombs[i].explosion.currDelay)++ >= bombs[i].explosion.frameDelay){
+
+          bombs[i].explosion.currDelay = 0;//Time to update frame
+
+          if(++(bombs[i].explosion.currFrame) > bombs[i].explosion.maxFrame)//Updates the frame
+              bombs[i].explosion.isLive = false;
+          }
       }
-      map[bomb.entity.x + x][bomb.entity.y] = map[bomb.entity.x + x][bomb.entity.y]==BOX?GRASS:map[bomb.entity.x + x][bomb.entity.y];
-      map[bomb.entity.x - x][bomb.entity.y] = map[bomb.entity.x -x][bomb.entity.y]==BOX?GRASS:map[bomb.entity.x -x][bomb.entity.y];
+      i++;
+    }
+}
 
-    }*/
+void DrawExplosion(BOMBS bombs[5]){
+  int i = 0;
+    while(i<5){
+      if(bombs[i].explosion.isLive){
 
+        al_draw_tinted_scaled_rotated_bitmap_region(bombs[i].explosion.entity.sprite, bombs[i].explosion.currFrame*48, 0, 48, 48, al_map_rgb_f(1.0, 1.0, 1.0),
+         0, 0, bombs[i].explosion.entity.x*32, bombs[i].explosion.entity.y*32, 0.66, 0.66, 0, 0);
+
+    }
+    i++;
+
+}
 }
