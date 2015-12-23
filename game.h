@@ -15,11 +15,6 @@ typedef enum{
   BOX
 }TILES;
 
-typedef struct{
-  int x;
-  int y;
-}iVector3;
-
 //Entities
 typedef struct _Entity{
   int x;
@@ -35,10 +30,10 @@ typedef struct _Explosion{
   short frameDelay;
   short maxFrame;
   bool isLive;
-  iVector3 horizontalB;
-  iVector3 horizontalF;
-  iVector3 verticalB;
-  iVector3 verticalF;
+  int horizontalB;
+  int horizontalF;
+  int verticalB;
+  int verticalF;
 }EXPLOSION;
 
 typedef struct _Bomb{

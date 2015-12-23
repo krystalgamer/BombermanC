@@ -106,7 +106,7 @@ void ExplodeBomb(BOMBS *bomb,TILES map[15][13]){
     stopVerticalB = false, stopHorizontalB = false;
 
     int x = 1,y = 1;
-    bomb->explosion.horizontalF.x = bomb->entity.x;
+    bomb->explosion.horizontalF = bomb->entity.x;
 
     while(x<=bomb->radius){
       if(!stopHorizontalB || !stopHorizontalF){
@@ -115,7 +115,7 @@ void ExplodeBomb(BOMBS *bomb,TILES map[15][13]){
         || map[bomb->entity.x + x][bomb->entity.y] == GRASS)){
 
             map[bomb->entity.x + x][bomb->entity.y] = GRASS;
-            bomb->explosion.horizontalF.x = bomb->entity.x + x;
+            bomb->explosion.horizontalF = bomb->entity.x + x;
           }
         else
           stopHorizontalF = true;
@@ -178,14 +178,17 @@ void DrawExplosion(BOMBS bombs[5]){
     while(i<5){
       if(bombs[i].explosion.isLive){
 
+        //Center of the bomb
         al_draw_tinted_scaled_rotated_bitmap_region(bombs[i].explosion.entity.sprite, bombs[i].explosion.currFrame*48, 0, 48, 48, al_map_rgb_f(1.0, 1.0, 1.0),
          0, 0, bombs[i].explosion.entity.x*32, bombs[i].explosion.entity.y*32, 0.66, 0.66, 0, 0);
 
-         if(bombs[i].explosion.horizontalF.x != bombs[i].explosion.entity.x){
+         //Draw the arms of the bomb
+         if(bombs[i].explosion.horizontalF != bombs[i].explosion.entity.x){
 
-           while(bombs[i].explosion.horizontalF.x >=  bombs[i].explosion.entity.x + drawArms){
-
-             if(bombs[i].explosion.horizontalF.x ==  bombs[i].explosion.entity.x + drawArms){
+          //Right Arm
+           while(bombs[i].explosion.horizontalF >=  bombs[i].explosion.entity.x + drawArms){
+              //End of the arm
+             if(bombs[i].explosion.horizontalF ==  bombs[i].explosion.entity.x + drawArms){
                al_draw_tinted_scaled_rotated_bitmap_region(bombs[i].explosion.entity.sprite, bombs[i].explosion.currFrame*48, 2*48, 48, 48, al_map_rgb_f(1.0, 1.0, 1.0),
                 0, 0, (bombs[i].explosion.entity.x + drawArms)*32, bombs[i].explosion.entity.y*32, 0.66, 0.66, 0, 0);
                break;
@@ -194,6 +197,8 @@ void DrawExplosion(BOMBS bombs[5]){
               0, 0, (bombs[i].explosion.entity.x + drawArms)*32, bombs[i].explosion.entity.y*32, 0.66, 0.66, 0, 0);
               drawArms++;
            }
+
+
          }
 
     }
