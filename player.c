@@ -114,8 +114,12 @@ void ExplodeBomb(BOMBS *bomb,TILES map[15][13]){
         if(!stopHorizontalF && (map[bomb->entity.x + x][bomb->entity.y] == BOX
         || map[bomb->entity.x + x][bomb->entity.y] == GRASS)){
 
+          if(map[bomb->entity.x + x][bomb->entity.y] == BOX)
+            stopHorizontalF = true;
+
             map[bomb->entity.x + x][bomb->entity.y] = GRASS;
             bomb->explosion.horizontalF = bomb->entity.x + x;
+
           }
         else
           stopHorizontalF = true;
@@ -123,8 +127,11 @@ void ExplodeBomb(BOMBS *bomb,TILES map[15][13]){
         if(!stopHorizontalB && (map[bomb->entity.x - x][bomb->entity.y] == BOX
         || map[bomb->entity.x - x][bomb->entity.y] == GRASS)){
 
+              if(map[bomb->entity.x - x][bomb->entity.y] == BOX)
+                stopHorizontalB = true;
               map[bomb->entity.x - x][bomb->entity.y] = GRASS;
               bomb->explosion.horizontalB = bomb->entity.x - x;
+
             }
           else
             stopHorizontalB = true;
@@ -137,8 +144,11 @@ void ExplodeBomb(BOMBS *bomb,TILES map[15][13]){
         if(!stopVerticalF && (map[bomb->entity.x][bomb->entity.y + y] == BOX
         || map[bomb->entity.x][bomb->entity.y + y] == GRASS)){
 
+            if(map[bomb->entity.x][bomb->entity.y + y] == BOX)
+              stopVerticalF = true;
             map[bomb->entity.x][bomb->entity.y + y] = GRASS;
             bomb->explosion.verticalF = bomb->entity.y + y;
+
           }
         else
           stopVerticalF = true;
@@ -146,6 +156,9 @@ void ExplodeBomb(BOMBS *bomb,TILES map[15][13]){
         if(!stopVerticalB && (map[bomb->entity.x][bomb->entity.y - y] == BOX
         || map[bomb->entity.x][bomb->entity.y - y] == GRASS)){
 
+
+            if(map[bomb->entity.x][bomb->entity.y - y] == BOX)
+                  stopVerticalB = true;
               map[bomb->entity.x][bomb->entity.y - y] = GRASS;
               bomb->explosion.verticalB = bomb->entity.y - y;
             }
@@ -254,14 +267,6 @@ void DrawExplosion(BOMBS bombs[5]){
         drawArms++;
      }
    }
-
-
-
-
-
-
-
-
       }i++;
     }
 }
