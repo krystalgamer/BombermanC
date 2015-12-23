@@ -15,6 +15,11 @@ typedef enum{
   BOX
 }TILES;
 
+typedef struct{
+  int x;
+  int y;
+}iVector3;
+
 //Entities
 typedef struct _Entity{
   int x;
