@@ -51,7 +51,6 @@ void InitBombs(BOMBS bombs[5],ALLEGRO_BITMAP* bombSprite,ALLEGRO_BITMAP* expSpri
     bombs[i].currTime = 0;
     bombs[i].radius = bombs[i].explosion.radius = 2;
     bombs[i].entity.sprite = bombSprite;
-    bombs[i].explosion.currDelay = 5;
     bombs[i].explosion.frameDelay = 1;
     bombs[i].explosion.maxFrame = 6;
     bombs[i].explosion.currFrame = bombs[i].explosion.currDelay = 0;
@@ -106,7 +105,8 @@ void ExplodeBomb(BOMBS *bomb,TILES map[15][13]){
     stopVerticalB = false, stopHorizontalB = false;
 
     int x = 1,y = 1;
-    bomb->explosion.horizontalF = bomb->entity.x;
+    bomb->explosion.horizontalF = bomb->explosion.horizontalB = bomb->entity.x;
+    bomb->explosion.verticalF = bomb->explosion.verticalB = bomb->entity.y;
 
     while(x<=bomb->radius){
       if(!stopHorizontalB || !stopHorizontalF){
@@ -121,8 +121,11 @@ void ExplodeBomb(BOMBS *bomb,TILES map[15][13]){
           stopHorizontalF = true;
 
         if(!stopHorizontalB && (map[bomb->entity.x - x][bomb->entity.y] == BOX
-        || map[bomb->entity.x - x][bomb->entity.y] == GRASS))
+        || map[bomb->entity.x - x][bomb->entity.y] == GRASS)){
+
               map[bomb->entity.x - x][bomb->entity.y] = GRASS;
+              bomb->explosion.horizontalB = bomb->entity.x - x;
+            }
           else
             stopHorizontalB = true;
       }
@@ -132,14 +135,20 @@ void ExplodeBomb(BOMBS *bomb,TILES map[15][13]){
     while(y<=bomb->radius){
       if(!stopVerticalB || !stopVerticalF){
         if(!stopVerticalF && (map[bomb->entity.x][bomb->entity.y + y] == BOX
-        || map[bomb->entity.x][bomb->entity.y + y] == GRASS))
+        || map[bomb->entity.x][bomb->entity.y + y] == GRASS)){
+
             map[bomb->entity.x][bomb->entity.y + y] = GRASS;
+            bomb->explosion.verticalF = bomb->entity.y + y;
+          }
         else
           stopVerticalF = true;
 
         if(!stopVerticalB && (map[bomb->entity.x][bomb->entity.y - y] == BOX
-        || map[bomb->entity.x][bomb->entity.y - y] == GRASS))
+        || map[bomb->entity.x][bomb->entity.y - y] == GRASS)){
+
               map[bomb->entity.x][bomb->entity.y - y] = GRASS;
+              bomb->explosion.verticalB = bomb->entity.y - y;
+            }
           else
             stopVerticalB = true;
       }
@@ -177,15 +186,13 @@ void DrawExplosion(BOMBS bombs[5]){
   int drawArms = 1;
     while(i<5){
       if(bombs[i].explosion.isLive){
-
         //Center of the bomb
         al_draw_tinted_scaled_rotated_bitmap_region(bombs[i].explosion.entity.sprite, bombs[i].explosion.currFrame*48, 0, 48, 48, al_map_rgb_f(1.0, 1.0, 1.0),
          0, 0, bombs[i].explosion.entity.x*32, bombs[i].explosion.entity.y*32, 0.66, 0.66, 0, 0);
 
-         //Draw the arms of the bomb
+         //Right Arm
          if(bombs[i].explosion.horizontalF != bombs[i].explosion.entity.x){
 
-          //Right Arm
            while(bombs[i].explosion.horizontalF >=  bombs[i].explosion.entity.x + drawArms){
               //End of the arm
              if(bombs[i].explosion.horizontalF ==  bombs[i].explosion.entity.x + drawArms){
@@ -197,12 +204,64 @@ void DrawExplosion(BOMBS bombs[5]){
               0, 0, (bombs[i].explosion.entity.x + drawArms)*32, bombs[i].explosion.entity.y*32, 0.66, 0.66, 0, 0);
               drawArms++;
            }
+          drawArms = 1;
 
+        }
 
+        //Left Arm
+        if(bombs[i].explosion.horizontalB !=  bombs[i].explosion.entity.x){
+
+         while(bombs[i].explosion.horizontalB <=  bombs[i].explosion.entity.x - drawArms){
+            //End of the arm
+           if(bombs[i].explosion.horizontalB ==  bombs[i].explosion.entity.x - drawArms){
+             al_draw_tinted_scaled_rotated_bitmap_region(bombs[i].explosion.entity.sprite, bombs[i].explosion.currFrame*48, 2*48, 48, 48, al_map_rgb_f(1.0, 1.0, 1.0),
+              48,48, (bombs[i].explosion.entity.x - drawArms)*32,bombs[i].explosion.entity.y*32, 0.66, 0.66, 3.1415, 0);
+             break;
+           }
+           al_draw_tinted_scaled_rotated_bitmap_region(bombs[i].explosion.entity.sprite, bombs[i].explosion.currFrame*48, 48, 48, 48, al_map_rgb_f(1.0, 1.0, 1.0),
+            48, 48, (bombs[i].explosion.entity.x - drawArms)*32, bombs[i].explosion.entity.y*32, 0.66, 0.66, 3.1415, 0);
+            drawArms++;
          }
+       }
+       drawArms = 1;
 
+       //Upper Arm
+       if(bombs[i].explosion.verticalB !=  bombs[i].explosion.entity.y){
+       while(bombs[i].explosion.verticalB <=  bombs[i].explosion.entity.y - drawArms){
+          //End of the arm
+         if(bombs[i].explosion.verticalB ==  bombs[i].explosion.entity.y - drawArms){
+           al_draw_tinted_scaled_rotated_bitmap_region(bombs[i].explosion.entity.sprite, bombs[i].explosion.currFrame*48, 2*48, 48, 48, al_map_rgb_f(1.0, 1.0, 1.0),
+            48,0, bombs[i].explosion.entity.x*32,(bombs[i].explosion.entity.y - drawArms)*32, 0.66, 0.66, 3.1415/2*3, 0);
+           break;
+         }
+         al_draw_tinted_scaled_rotated_bitmap_region(bombs[i].explosion.entity.sprite, bombs[i].explosion.currFrame*48, 48, 48, 48, al_map_rgb_f(1.0, 1.0, 1.0),
+          48, 0, bombs[i].explosion.entity.x*32, (bombs[i].explosion.entity.y - drawArms)*32, 0.66, 0.66, 3.1415/2*3, 0);
+          drawArms++;
+       }
+     }
+     drawArms = 1;
+     //Down
+     if(bombs[i].explosion.verticalF !=  bombs[i].explosion.entity.y){
+     while(bombs[i].explosion.verticalF >=  bombs[i].explosion.entity.y + drawArms){
+        //End of the arm
+       if(bombs[i].explosion.verticalF ==  bombs[i].explosion.entity.y + drawArms){
+         al_draw_tinted_scaled_rotated_bitmap_region(bombs[i].explosion.entity.sprite, bombs[i].explosion.currFrame*48, 2*48, 48, 48, al_map_rgb_f(1.0, 1.0, 1.0),
+          0,48, bombs[i].explosion.entity.x*32,(bombs[i].explosion.entity.y + drawArms)*32, 0.66, 0.66, 3.1415/2, 0);
+         break;
+       }
+       al_draw_tinted_scaled_rotated_bitmap_region(bombs[i].explosion.entity.sprite, bombs[i].explosion.currFrame*48, 48, 48, 48, al_map_rgb_f(1.0, 1.0, 1.0),
+        0, 49, bombs[i].explosion.entity.x*32, (bombs[i].explosion.entity.y + drawArms)*32, 0.66, 0.66, 3.1415/2, 0);
+        drawArms++;
+     }
+   }
+
+
+
+
+
+
+
+
+      }i++;
     }
-    i++;
-
-}
 }
