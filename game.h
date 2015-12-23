@@ -35,6 +35,10 @@ typedef struct _Explosion{
   short frameDelay;
   short maxFrame;
   bool isLive;
+  iVector3 horizontalB;
+  iVector3 horizontalF;
+  iVector3 verticalB;
+  iVector3 verticalF;
 }EXPLOSION;
 
 typedef struct _Bomb{
@@ -68,7 +72,7 @@ void InitBombs(BOMBS bombs[5],ALLEGRO_BITMAP* bombSprite,ALLEGRO_BITMAP* expSpri
 void PlaceBomb(PLAYER* player, TILES map[15][13]);
 void DrawBomb(BOMBS bombs[5]);
 void UpdateBomb(BOMBS bombs[5],TILES map[15][13]);
-void ExplodeBomb(BOMBS bomb,TILES map[15][13]);
+void ExplodeBomb(BOMBS *bomb,TILES map[15][13]);
 
 void CreateExplosion(BOMBS bomb, EXPLOSION* explosion);
 void UpdateExplosion(BOMBS bombs[5]);

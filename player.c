@@ -94,48 +94,52 @@ void UpdateBomb(BOMBS bombs[5],TILES map[15][13]){
         bombs[i].radius = 2;
         map[bombs[i].entity.x][bombs[i].entity.y] = GRASS;
         CreateExplosion(bombs[i], &bombs[i].explosion);
-        ExplodeBomb(bombs[i],map);
+        ExplodeBomb(&bombs[i],map);
       }
     }
     i++;
   }
 }
-void ExplodeBomb(BOMBS bomb,TILES map[15][13]){
+void ExplodeBomb(BOMBS *bomb,TILES map[15][13]){
 
     bool stopVerticalF = false, stopHorizontalF = false,
     stopVerticalB = false, stopHorizontalB = false;
 
     int x = 1,y = 1;
+    bomb->explosion.horizontalF.x = bomb->entity.x;
 
-    while(x<=bomb.radius){
+    while(x<=bomb->radius){
       if(!stopHorizontalB || !stopHorizontalF){
 
-        if(!stopHorizontalF && (map[bomb.entity.x + x][bomb.entity.y] == BOX
-        || map[bomb.entity.x + x][bomb.entity.y] == GRASS))
-            map[bomb.entity.x + x][bomb.entity.y] = GRASS;
+        if(!stopHorizontalF && (map[bomb->entity.x + x][bomb->entity.y] == BOX
+        || map[bomb->entity.x + x][bomb->entity.y] == GRASS)){
+
+            map[bomb->entity.x + x][bomb->entity.y] = GRASS;
+            bomb->explosion.horizontalF.x = bomb->entity.x + x;
+          }
         else
           stopHorizontalF = true;
 
-        if(!stopHorizontalB && (map[bomb.entity.x - x][bomb.entity.y] == BOX
-        || map[bomb.entity.x - x][bomb.entity.y] == GRASS)){
-              map[bomb.entity.x - x][bomb.entity.y] = GRASS;}
+        if(!stopHorizontalB && (map[bomb->entity.x - x][bomb->entity.y] == BOX
+        || map[bomb->entity.x - x][bomb->entity.y] == GRASS))
+              map[bomb->entity.x - x][bomb->entity.y] = GRASS;
           else
             stopHorizontalB = true;
       }
       x++;
 
     }
-    while(y<=bomb.radius){
+    while(y<=bomb->radius){
       if(!stopVerticalB || !stopVerticalF){
-        if(!stopVerticalF && (map[bomb.entity.x][bomb.entity.y + y] == BOX
-        || map[bomb.entity.x][bomb.entity.y + y] == GRASS))
-            map[bomb.entity.x][bomb.entity.y + y] = GRASS;
+        if(!stopVerticalF && (map[bomb->entity.x][bomb->entity.y + y] == BOX
+        || map[bomb->entity.x][bomb->entity.y + y] == GRASS))
+            map[bomb->entity.x][bomb->entity.y + y] = GRASS;
         else
           stopVerticalF = true;
 
-        if(!stopVerticalB && (map[bomb.entity.x][bomb.entity.y - y] == BOX
-        || map[bomb.entity.x][bomb.entity.y - y] == GRASS))
-              map[bomb.entity.x][bomb.entity.y - y] = GRASS;
+        if(!stopVerticalB && (map[bomb->entity.x][bomb->entity.y - y] == BOX
+        || map[bomb->entity.x][bomb->entity.y - y] == GRASS))
+              map[bomb->entity.x][bomb->entity.y - y] = GRASS;
           else
             stopVerticalB = true;
       }
@@ -170,11 +174,27 @@ void UpdateExplosion(BOMBS bombs[5]){
 
 void DrawExplosion(BOMBS bombs[5]){
   int i = 0;
+  int drawArms = 1;
     while(i<5){
       if(bombs[i].explosion.isLive){
 
         al_draw_tinted_scaled_rotated_bitmap_region(bombs[i].explosion.entity.sprite, bombs[i].explosion.currFrame*48, 0, 48, 48, al_map_rgb_f(1.0, 1.0, 1.0),
          0, 0, bombs[i].explosion.entity.x*32, bombs[i].explosion.entity.y*32, 0.66, 0.66, 0, 0);
+
+         if(bombs[i].explosion.horizontalF.x != bombs[i].explosion.entity.x){
+
+           while(bombs[i].explosion.horizontalF.x >=  bombs[i].explosion.entity.x + drawArms){
+
+             if(bombs[i].explosion.horizontalF.x ==  bombs[i].explosion.entity.x + drawArms){
+               al_draw_tinted_scaled_rotated_bitmap_region(bombs[i].explosion.entity.sprite, bombs[i].explosion.currFrame*48, 2*48, 48, 48, al_map_rgb_f(1.0, 1.0, 1.0),
+                0, 0, (bombs[i].explosion.entity.x + drawArms)*32, bombs[i].explosion.entity.y*32, 0.66, 0.66, 0, 0);
+               break;
+             }
+             al_draw_tinted_scaled_rotated_bitmap_region(bombs[i].explosion.entity.sprite, bombs[i].explosion.currFrame*48, 48, 48, 48, al_map_rgb_f(1.0, 1.0, 1.0),
+              0, 0, (bombs[i].explosion.entity.x + drawArms)*32, bombs[i].explosion.entity.y*32, 0.66, 0.66, 0, 0);
+              drawArms++;
+           }
+         }
 
     }
     i++;
