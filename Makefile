@@ -1,6 +1,6 @@
 CC= gcc
 LIBS = -lallegro -lallegro_image -lallegro_dialog
-OBJ = main.o player.o map.o
+OBJ = main.o player.o map.o bomb.o
 CFLAGS = -Wall -std=c99
 all: bomb
 
