@@ -50,6 +50,7 @@ typedef struct _Player{
   ENTITY entity;
   BOMBS bombs[5];
   short maxBombs;
+  bool isAlive;
 }PLAYER;
 
 
@@ -59,6 +60,7 @@ typedef struct _Player{
 void TryToMovePlayer(ENTITY *player,int key, TILES map[15][13],PLAYER* pl);
 void MoveHorizontal(ENTITY* player,bool forward, TILES map[15][13]);
 void MoveVertical(ENTITY* player,bool forward, TILES map[15][13]);
+void CheckIfAlive(PLAYER* player, EXPLOSION explosion);
 
 void CreateMap(TILES map[15][13]);//Creates the map
 void DrawMap(TILES map[15][13],ALLEGRO_BITMAP* tileMap); //Draws Map
@@ -66,8 +68,8 @@ void DrawMap(TILES map[15][13],ALLEGRO_BITMAP* tileMap); //Draws Map
 void InitBombs(BOMBS bombs[5],ALLEGRO_BITMAP* bombSprite,ALLEGRO_BITMAP* expSprite);
 void PlaceBomb(PLAYER* player, TILES map[15][13]);
 void DrawBomb(BOMBS bombs[5]);
-void UpdateBomb(BOMBS bombs[5],TILES map[15][13]);
-void ExplodeBomb(BOMBS *bomb,TILES map[15][13]);
+void UpdateBomb(BOMBS bombs[5],TILES map[15][13],PLAYER* player);
+void ExplodeBomb(BOMBS *bomb,TILES map[15][13],PLAYER* player);
 
 void CreateExplosion(BOMBS bomb, EXPLOSION* explosion);
 void UpdateExplosion(BOMBS bombs[5]);

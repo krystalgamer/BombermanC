@@ -44,7 +44,7 @@ void DrawBomb(BOMBS bombs[5]){
     i++;
   }
 }
-void UpdateBomb(BOMBS bombs[5],TILES map[15][13]){
+void UpdateBomb(BOMBS bombs[5],TILES map[15][13],PLAYER* player){
   int i = 0;
   while(i<5){
     if((bombs[i].isLive)){
@@ -55,13 +55,13 @@ void UpdateBomb(BOMBS bombs[5],TILES map[15][13]){
         bombs[i].radius = 2;
         map[bombs[i].entity.x][bombs[i].entity.y] = GRASS;
         CreateExplosion(bombs[i], &bombs[i].explosion);
-        ExplodeBomb(&bombs[i],map);
+        ExplodeBomb(&bombs[i],map,player);
       }
     }
     i++;
   }
 }
-void ExplodeBomb(BOMBS *bomb,TILES map[15][13]){
+void ExplodeBomb(BOMBS *bomb,TILES map[15][13], PLAYER* player){
 
     bool stopVerticalF = false, stopHorizontalF = false,
     stopVerticalB = false, stopHorizontalB = false;
@@ -130,6 +130,7 @@ void ExplodeBomb(BOMBS *bomb,TILES map[15][13]){
       y++;
 
     }
+    CheckIfAlive(player, bomb->explosion);
 
 }
 

@@ -19,6 +19,7 @@ int main(){
   PLAYER player;
   player.entity.x = 1;
   player.entity.y = 1;
+  player.isAlive = true;
   player.entity.sprite = al_load_bitmap("./bitmaps/player.png");
   ALLEGRO_BITMAP* bombSprite = al_load_bitmap("./bitmaps/coise.png");
   ALLEGRO_BITMAP* expSprite = al_load_bitmap("./bitmaps/exp48.png");
@@ -48,8 +49,14 @@ int main(){
         switch(event.type){
 
           case ALLEGRO_EVENT_TIMER:
+                if(!player.isAlive){
+                    CreateMap(map);
+                    player.entity.x = player.entity.y  = 1;
+                    player.isAlive = true;
+                    continue;
+                }
                 redraw = true;
-                UpdateBomb(player.bombs, map);
+                UpdateBomb(player.bombs, map, &player);
                 UpdateExplosion(player.bombs);
                 break;
           case ALLEGRO_EVENT_KEY_DOWN:

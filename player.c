@@ -36,3 +36,15 @@ void MoveHorizontal(ENTITY* player,bool forward, TILES map[15][13]){
       (player->x)--;
   }
 }
+
+void CheckIfAlive(PLAYER* player, EXPLOSION explosion){
+
+  if((explosion.horizontalB <= player->entity.x && explosion.horizontalF >= player->entity.x &&
+    explosion.entity.y == player->entity.y))
+      player->isAlive = false;
+
+  else if((explosion.verticalB <= player->entity.y && explosion.verticalF >= player->entity.y &&
+        explosion.entity.x == player->entity.x))
+          player->isAlive = false;
+
+}
