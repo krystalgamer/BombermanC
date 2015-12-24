@@ -14,22 +14,18 @@ int main(){
   ALLEGRO_EVENT_QUEUE* eventQueue;
   ALLEGRO_TIMER* drawTimer;
 
+  display = al_create_display(480,416);
+
+  PLAYER player;
   eventQueue = al_create_event_queue();
   drawTimer = al_create_timer(1/60.0);
-  PLAYER player;
-  player.entity.x = 1;
-  player.entity.y = 1;
-  player.isAlive = true;
-  player.entity.sprite = al_load_bitmap("./bitmaps/player.png");
   ALLEGRO_BITMAP* bombSprite = al_load_bitmap("./bitmaps/coise.png");
   ALLEGRO_BITMAP* expSprite = al_load_bitmap("./bitmaps/exp48.png");
+  player.entity.sprite = al_load_bitmap("./bitmaps/player.png");
+  tileMap = al_load_bitmap("./bitmaps/tiles2.png");
   al_convert_mask_to_alpha(bombSprite, al_get_pixel(bombSprite, 0, 0));
   al_convert_mask_to_alpha(expSprite, al_get_pixel(expSprite, 0, 0));
-  player.maxBombs = MAX_BOMBS;
   al_convert_mask_to_alpha(player.entity.sprite, al_map_rgb(255,0,255));
-
-  display = al_create_display(480,416);
-  tileMap = al_load_bitmap("./bitmaps/tiles2.png");
   srand(time(NULL));
 
   CreateMap(map);
@@ -39,6 +35,7 @@ int main(){
   al_start_timer(drawTimer);
   bool redraw = false;
 
+  InitPlayer(&player);
   InitBombs(player.bombs,bombSprite,expSprite);
 
   while(1){
@@ -51,8 +48,7 @@ int main(){
           case ALLEGRO_EVENT_TIMER:
                 if(!player.isAlive){
                     CreateMap(map);
-                    player.entity.x = player.entity.y  = 1;
-                    player.isAlive = true;
+                    InitPlayer(&player);
                     continue;
                 }
                 redraw = true;

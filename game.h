@@ -61,6 +61,7 @@ void TryToMovePlayer(ENTITY *player,int key, TILES map[15][13],PLAYER* pl);
 void MoveHorizontal(ENTITY* player,bool forward, TILES map[15][13]);
 void MoveVertical(ENTITY* player,bool forward, TILES map[15][13]);
 void CheckIfAlive(PLAYER* player, EXPLOSION explosion);
+void InitPlayer(PLAYER* player);
 
 void CreateMap(TILES map[15][13]);//Creates the map
 void DrawMap(TILES map[15][13],ALLEGRO_BITMAP* tileMap); //Draws Map

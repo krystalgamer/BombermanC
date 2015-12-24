@@ -48,3 +48,10 @@ void CheckIfAlive(PLAYER* player, EXPLOSION explosion){
           player->isAlive = false;
 
 }
+
+void InitPlayer(PLAYER* player){
+
+  player->entity.x = player->entity.y = 1;
+  player->isAlive = true;
+  player->maxBombs = MAX_BOMBS;
+}
