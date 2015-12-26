@@ -1,0 +1,243 @@
+BOMB1:0x7ffc8401fa90 explosao+drawarms:2 horizonatalf:2 posição da bomba:1 drawarms:1
+BOMB:0x7ffc8401fad8 4
+BOMB1:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fad8 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fad8 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fad8 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fad8 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fad8 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fad8 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fad8 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fad8 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fad8 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fad8 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fad8 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fad8 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fad8 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fa90 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fa90 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fa90 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fa90 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fa90 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fa90 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fa90 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fa90 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fa90 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fa90 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fa90 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fa90 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fa90 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fa90 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fa90 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fa90 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fa90 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fa90 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fa90 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fa90 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fa90 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fa90 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fa90 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fa90 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fa90 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fa90 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fa90 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fa90 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fa90 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fa90 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fa90 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fa90 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fa90 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fa90 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fa90 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fa90 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fa90 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fa90 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fa90 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:2 horizonatalf:3 posição da bomba:1 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:2 horizonatalf:3
+BOMB1:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:3 posição da bomba:1 drawarms:2
+BOMB:0x7ffc8401fad8 4
+BOMB1:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fad8 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fad8 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fad8 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fad8 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fad8 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fad8 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fad8 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fad8 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fad8 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fad8 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fad8 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fad8 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4 posição da bomba:2 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:3 horizonatalf:4
+BOMB1:0x7ffc8401fad8 explosao+drawarms:4 horizonatalf:4 posição da bomba:2 drawarms:2
+BOMB:0x7ffc8401fad8 6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB:0x7ffc8401fad8 6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB:0x7ffc8401fad8 6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2
+BOMB1:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6 posição da bomba:4 drawarms:1
+BOMB2:0x7ffc8401fad8 explosao+drawarms:5 horizonatalf:6
+BOMB1:0x7ffc8401fad8 explosao+drawarms:6 horizonatalf:6 posição da bomba:4 drawarms:2

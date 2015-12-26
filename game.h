@@ -66,7 +66,7 @@ void InitPlayer(PLAYER* player);
 void CreateMap(TILES map[15][13]);//Creates the map
 void DrawMap(TILES map[15][13],ALLEGRO_BITMAP* tileMap); //Draws Map
 
-void InitBombs(BOMBS bombs[5],ALLEGRO_BITMAP* bombSprite,ALLEGRO_BITMAP* expSprite);
+void InitBombs(BOMBS bombs[5],ALLEGRO_BITMAP* bombSprite,ALLEGRO_BITMAP* expSprite,bool first);
 void PlaceBomb(PLAYER* player, TILES map[15][13]);
 void DrawBomb(BOMBS bombs[5]);
 void UpdateBomb(BOMBS bombs[5],TILES map[15][13],PLAYER* player);

@@ -5,18 +5,20 @@
 BOMB PART
 
 */
-void InitBombs(BOMBS bombs[5],ALLEGRO_BITMAP* bombSprite,ALLEGRO_BITMAP* expSprite){
+void InitBombs(BOMBS bombs[5],ALLEGRO_BITMAP* bombSprite,ALLEGRO_BITMAP* expSprite, bool first){
   int i = 0;
   while(i<5){
     bombs[i].isLive = bombs[i].explosion.isLive = false;
     bombs[i].maxTime = MAX_TIME;
     bombs[i].currTime = 0;
     bombs[i].radius = bombs[i].explosion.radius = 2;
-    bombs[i].entity.sprite = bombSprite;
+    if(first){
+      bombs[i].explosion.entity.sprite = expSprite;
+      bombs[i].entity.sprite = bombSprite;
+    }
     bombs[i].explosion.frameDelay = 1;
     bombs[i].explosion.maxFrame = 6;
     bombs[i].explosion.currFrame = bombs[i].explosion.currDelay = 0;
-    bombs[i].explosion.entity.sprite = expSprite;
     i++;
   }
 }
@@ -81,6 +83,28 @@ void ExplodeBomb(BOMBS *bomb,TILES map[15][13], PLAYER* player){
 
             map[bomb->entity.x + x][bomb->entity.y] = GRASS;
             bomb->explosion.horizontalF = bomb->entity.x + x;
+
+          }
+          else if(!stopHorizontalF && map[bomb->entity.x + x][bomb->entity.y] == BOMB){
+              int i = 0;
+              while(i<5){
+                if(player->bombs[i].isLive)
+                {
+
+                  if(player->bombs[i].entity.x == bomb->entity.x + x &&
+                    player->bombs[i].entity.y == bomb->entity.y){
+                      player->bombs[i].currTime = player->bombs[i].maxTime;
+                      map[bomb->entity.x + x][bomb->entity.y] = GRASS;
+                      UpdateBomb(&(player->bombs[i]), map, player);
+                      fprintf(log, "BOMB:%p %d\n", &(player->bombs[i]) , player->bombs[i].explosion.horizontalF);
+                      fflush(log);
+                      break;
+                    }
+
+                }
+                i++;
+              }
+              stopHorizontalF = true;
 
           }
         else
@@ -162,31 +186,37 @@ void DrawExplosion(BOMBS bombs[5]){
   int drawArms = 1;
     while(i<5){
       if(bombs[i].explosion.isLive){
+        drawArms = 1;
         //Center of the bomb
         al_draw_tinted_scaled_rotated_bitmap_region(bombs[i].explosion.entity.sprite, bombs[i].explosion.currFrame*48, 0, 48, 48, al_map_rgb_f(1.0, 1.0, 1.0),
          0, 0, bombs[i].explosion.entity.x*32, bombs[i].explosion.entity.y*32, 0.66, 0.66, 0, 0);
 
          //Right Arm
          if(bombs[i].explosion.horizontalF != bombs[i].explosion.entity.x){
-
+            drawArms = 1;
            while(bombs[i].explosion.horizontalF >=  bombs[i].explosion.entity.x + drawArms){
               //End of the arm
+              fprintf(log, "BOMB1:%p explosao+drawarms:%d horizonatalf:%d posição da bomba:%d drawarms:%d\n",&bombs[i], bombs[i].explosion.entity.x + drawArms
+            , bombs[i].explosion.horizontalF,bombs[i].explosion.entity.x, drawArms);
+            fflush(log);
              if(bombs[i].explosion.horizontalF ==  bombs[i].explosion.entity.x + drawArms){
                al_draw_tinted_scaled_rotated_bitmap_region(bombs[i].explosion.entity.sprite, bombs[i].explosion.currFrame*48, 2*48, 48, 48, al_map_rgb_f(1.0, 1.0, 1.0),
                 0, 0, (bombs[i].explosion.entity.x + drawArms)*32, bombs[i].explosion.entity.y*32, 0.66, 0.66, 0, 0);
                break;
              }
+             fprintf(log, "BOMB2:%p explosao+drawarms:%d horizonatalf:%d\n",&bombs[i], bombs[i].explosion.entity.x + drawArms
+           , bombs[i].explosion.horizontalF);
+           fflush(log);
              al_draw_tinted_scaled_rotated_bitmap_region(bombs[i].explosion.entity.sprite, bombs[i].explosion.currFrame*48, 48, 48, 48, al_map_rgb_f(1.0, 1.0, 1.0),
               0, 0, (bombs[i].explosion.entity.x + drawArms)*32, bombs[i].explosion.entity.y*32, 0.66, 0.66, 0, 0);
               drawArms++;
            }
-          drawArms = 1;
 
         }
 
         //Left Arm
         if(bombs[i].explosion.horizontalB !=  bombs[i].explosion.entity.x){
-
+            drawArms = 1;
          while(bombs[i].explosion.horizontalB <=  bombs[i].explosion.entity.x - drawArms){
             //End of the arm
            if(bombs[i].explosion.horizontalB ==  bombs[i].explosion.entity.x - drawArms){
@@ -199,11 +229,11 @@ void DrawExplosion(BOMBS bombs[5]){
             drawArms++;
          }
        }
-       drawArms = 1;
 
        //Upper Arm
        if(bombs[i].explosion.verticalB !=  bombs[i].explosion.entity.y){
        while(bombs[i].explosion.verticalB <=  bombs[i].explosion.entity.y - drawArms){
+         drawArms = 1;
           //End of the arm
          if(bombs[i].explosion.verticalB ==  bombs[i].explosion.entity.y - drawArms){
            al_draw_tinted_scaled_rotated_bitmap_region(bombs[i].explosion.entity.sprite, bombs[i].explosion.currFrame*48, 2*48, 48, 48, al_map_rgb_f(1.0, 1.0, 1.0),
@@ -215,9 +245,9 @@ void DrawExplosion(BOMBS bombs[5]){
           drawArms++;
        }
      }
-     drawArms = 1;
      //Down
      if(bombs[i].explosion.verticalF !=  bombs[i].explosion.entity.y){
+       drawArms = 1;
      while(bombs[i].explosion.verticalF >=  bombs[i].explosion.entity.y + drawArms){
         //End of the arm
        if(bombs[i].explosion.verticalF ==  bombs[i].explosion.entity.y + drawArms){

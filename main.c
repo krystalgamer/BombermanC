@@ -36,7 +36,7 @@ int main(){
   bool redraw = false;
 
   InitPlayer(&player);
-  InitBombs(player.bombs,bombSprite,expSprite);
+  InitBombs(player.bombs,bombSprite,expSprite,true);
 
   while(1){
     while(!al_event_queue_is_empty(eventQueue)){
@@ -48,6 +48,7 @@ int main(){
           case ALLEGRO_EVENT_TIMER:
                 if(!player.isAlive){
                     CreateMap(map);
+                    InitBombs(player.bombs, NULL, NULL,false);
                     InitPlayer(&player);
                     continue;
                 }
