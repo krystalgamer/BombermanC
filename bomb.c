@@ -24,13 +24,20 @@ void InitBombs(BOMBS bombs[5],ALLEGRO_BITMAP* bombSprite,ALLEGRO_BITMAP* expSpri
 }
 
 void PlaceBomb(PLAYER* player, TILES map[15][13]){
-  int i = 0;
+  int i=0,j = 0;
   while(i<5){
     if(!(player->bombs[i].isLive)){
-    player->bombs[i].isLive = true;
-    player->bombs[i].entity.x = player->entity.x;
-    player->bombs[i].entity.y = player->entity.y;
-    map[player->entity.x][player->entity.y] = BOMB;
+      while(j<5){
+        if((player->bombs[j].isLive) && player->bombs[j].entity.x == player->entity.x &&
+      player->bombs[j].entity.y == player->entity.y)
+      {return;}
+      j++;
+
+    }
+      player->bombs[i].isLive = true;
+      player->bombs[i].entity.x = player->entity.x;
+      player->bombs[i].entity.y = player->entity.y;
+      map[player->entity.x][player->entity.y] = BOMB;
     return;
     }
     i++;
