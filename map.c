@@ -19,6 +19,7 @@ void CreateMap(TILES map[15][13]){
 
       }
     }
+	map[1][2] = map[2][1] = GRASS;
 }
 void DrawMap(TILES map[15][13],ALLEGRO_BITMAP* tileMap){
   for(int x = 0;x<15;x++){
